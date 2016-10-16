@@ -32,6 +32,7 @@ You can check out the sample provided in the repository.
 
 ```xml
 <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         app:backgroundTint="@color/colorAccent"
         android:layout_gravity="center"
