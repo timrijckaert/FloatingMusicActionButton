@@ -8,12 +8,10 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
-    tools:context="be.rijckaert.tim.animatedvector.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
         android:id="@+id/playToPauseFab"
-        android:src="@drawable/play_to_pause_animation"
         android:layout_width="match_parent"
         app:backgroundTint="@color/colorAccent"
         android:layout_gravity="center"
@@ -24,7 +22,6 @@
 
     <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
         android:id="@+id/playToStopFab"
-        android:src="@drawable/play_to_pause_animation"
         android:layout_width="match_parent"
         app:backgroundTint="@color/colorAccent"
         android:layout_margin="@dimen/activity_horizontal_margin"

@@ -15,7 +15,7 @@
             <path
                 android:name="@string/play_icon_top_path_name"
                 android:pathData="@string/play_icon_upper_path_data"
-                android:fillColor="@android:color/black"
+                android:fillColor="@android:color/white"
                 android:strokeLineCap="butt"
                 android:strokeLineJoin="miter"
                 android:strokeMiterLimit="10"/>
@@ -24,7 +24,7 @@
             <path
                 android:name="@string/play_icon_bottom_path_name"
                 android:pathData="@string/play_icon_bottom_path_data"
-                android:fillColor="@android:color/black"
+                android:fillColor="@android:color/white"
                 android:strokeLineCap="butt"
                 android:strokeLineJoin="miter"
                 android:strokeMiterLimit="10"/>
