@@ -5,6 +5,8 @@ A simple FloatingActionButton with vector animations between different media sta
 This a part of a blog post on Medium.
 https://medium.com/@timrijckaert/play-pause-stop-animated-vector-drawable-88a9df956d20#.edub54uks
 
+<img src="sample.gif" width=300></img>
+
 ##Installation
 Add it in your root build.gradle at the end of repositories:
 
