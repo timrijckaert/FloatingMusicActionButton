@@ -1,4 +1,6 @@
-# FloatingMusicActionButton
+# FloatingMusicActionButton 
+[![](https://jitpack.io/v/timrijckaert/FloatingMusicActionButton.svg)](https://jitpack.io/#timrijckaert/FloatingMusicActionButton)
+
 A simple FloatingActionButton with vector animations between different media states.
 This a part of a blog post on Medium.
 https://medium.com/@timrijckaert/play-pause-stop-animated-vector-drawable-88a9df956d20#.edub54uks
