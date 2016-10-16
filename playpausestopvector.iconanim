@@ -1,0 +1,158 @@
+{
+  "artwork": {
+    "id": "playpausestopvector",
+    "canvasColor": null,
+    "width": 128,
+    "height": 128,
+    "layers": [
+      {
+        "id": "parts",
+        "type": "group",
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 64,
+        "pivotY": 64,
+        "translateX": 0,
+        "translateY": 0,
+        "layers": [
+          {
+            "id": "upperpart",
+            "type": "group",
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "translateX": 0,
+            "translateY": 0,
+            "layers": [
+              {
+                "id": "upper",
+                "type": "path",
+                "pathData": "M 32 16 L 32 64 L 112 64 L 112 64 Z",
+                "fillColor": "000",
+                "fillAlpha": 1,
+                "strokeColor": "",
+                "strokeAlpha": 1,
+                "strokeWidth": 0,
+                "strokeLinecap": "butt",
+                "strokeLinejoin": "miter",
+                "strokeMiterLimit": 10,
+                "trimPathStart": 0,
+                "trimPathEnd": 1,
+                "trimPathOffset": 0
+              }
+            ]
+          },
+          {
+            "id": "bottompart",
+            "type": "group",
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1,
+            "pivotX": 0,
+            "pivotY": 0,
+            "translateX": 0,
+            "translateY": 0,
+            "layers": [
+              {
+                "id": "bottom",
+                "type": "path",
+                "pathData": "M 32 112 L 32 64 L 112 64 L 112 64 Z",
+                "fillColor": "000",
+                "fillAlpha": 1,
+                "strokeColor": "",
+                "strokeAlpha": 1,
+                "strokeWidth": 0,
+                "strokeLinecap": "butt",
+                "strokeLinejoin": "miter",
+                "strokeMiterLimit": 10,
+                "trimPathStart": 0,
+                "trimPathEnd": 1,
+                "trimPathOffset": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "animations": [
+    {
+      "id": "play_to_pause",
+      "duration": 300,
+      "blocks": [
+        {
+          "layerId": "upper",
+          "propertyName": "pathData",
+          "fromValue": "M 32 32 L 32 64 L 96 64 L 96 64 Z",
+          "toValue": "M 32 40 L 32 56  L 96 56 L 96 40 Z",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "bottom",
+          "propertyName": "pathData",
+          "fromValue": "M 32 104 L 32 64 L 96 64 L 96 64 Z",
+          "toValue": "M 32 88 L 32 72 L 96 72 L 96 88 Z",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "parts",
+          "propertyName": "rotation",
+          "fromValue": 0,
+          "toValue": 90,
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "ACCELERATE_DECELERATE"
+        }
+      ]
+    },
+    {
+      "id": "play_to_stop",
+      "duration": 300,
+      "blocks": [
+        {
+          "layerId": "upper",
+          "propertyName": "pathData",
+          "fromValue": "M 32 16 L 32 64 L 112 64 L 112 64 Z",
+          "toValue": "M 32 16 L 32 64 L 112 64 L 112 64 Z",
+          "startTime": 2270,
+          "endTime": 2370,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "upper",
+          "propertyName": "pathData",
+          "fromValue": "M 32 16 L 32 64 L 112 64 L 112 64 Z",
+          "toValue": "M 32 32 L 32 64 L 96 64 L 96 32  Z",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "bottom",
+          "propertyName": "pathData",
+          "fromValue": "M 32 112 L 32 64 L 112 64 L 112 64 Z",
+          "toValue": "M 32 96 L 32 64 L 96 64 L 96 96 Z",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "parts",
+          "propertyName": "rotation",
+          "fromValue": 0,
+          "toValue": 90,
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "ACCELERATE_DECELERATE"
+        }
+      ]
+    }
+  ]
+}

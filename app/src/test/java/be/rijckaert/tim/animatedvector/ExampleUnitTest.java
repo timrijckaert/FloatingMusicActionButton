@@ -1,4 +1,4 @@
-package be.vrt.poc.playpausestopanimatedvector;
+package be.rijckaert.tim.animatedvector;
 
 import org.junit.Test;
 

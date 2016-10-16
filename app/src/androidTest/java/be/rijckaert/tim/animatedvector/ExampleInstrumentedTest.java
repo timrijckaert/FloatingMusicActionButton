@@ -1,4 +1,4 @@
-package be.vrt.poc.playpausestopanimatedvector;
+package be.rijckaert.tim.animatedvector;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
