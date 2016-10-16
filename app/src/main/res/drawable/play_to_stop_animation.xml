@@ -4,7 +4,7 @@
 
     <target
         android:name="@string/play_icon_group_parts"
-        android:animation="@animator/parts_play_to_pause_animation"/>
+        android:animation="@animator/rotate_90_animation"/>
 
     <target
         android:name="@string/play_icon_top_path_name"

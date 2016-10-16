@@ -11,17 +11,25 @@
     tools:context="be.rijckaert.tim.animatedvector.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <be.rijckaert.tim.animatedvector.PlayStateFloatingActionButton
+    <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+        android:id="@+id/playToPauseFab"
         android:src="@drawable/play_to_pause_animation"
-        android:layout_width="wrap_content"
-        app:backgroundTint="@color/colorPrimary"
-        android:layout_height="wrap_content"
-        android:onClick="startAnimation"/>
-
-    <ImageView
-        android:src="@drawable/play_to_stop_animation"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        app:backgroundTint="@color/colorAccent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        app:mode="playToPause"
         android:layout_weight="1"
-        android:onClick="startAnimation"/>
+        android:layout_height="0dp" />
+
+    <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+        android:id="@+id/playToStopFab"
+        android:src="@drawable/play_to_pause_animation"
+        android:layout_width="match_parent"
+        app:backgroundTint="@color/colorAccent"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        app:mode="playToStop"
+        android:layout_height="0dp" />
 </LinearLayout>

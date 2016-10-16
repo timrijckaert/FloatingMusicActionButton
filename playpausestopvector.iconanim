@@ -86,7 +86,7 @@
         {
           "layerId": "upper",
           "propertyName": "pathData",
-          "fromValue": "M 32 32 L 32 64 L 96 64 L 96 64 Z",
+          "fromValue": "M 44 32 L 44 64 L 100 64 L 100 64 Z",
           "toValue": "M 32 40 L 32 56  L 96 56 L 96 40 Z",
           "startTime": 0,
           "endTime": 300,
@@ -95,7 +95,7 @@
         {
           "layerId": "bottom",
           "propertyName": "pathData",
-          "fromValue": "M 32 104 L 32 64 L 96 64 L 96 64 Z",
+          "fromValue": "M 44 96 L 44 64 L 100 64 L 100 64 Z",
           "toValue": "M 32 88 L 32 72 L 96 72 L 96 88 Z",
           "startTime": 0,
           "endTime": 300,
@@ -128,7 +128,7 @@
         {
           "layerId": "upper",
           "propertyName": "pathData",
-          "fromValue": "M 32 16 L 32 64 L 112 64 L 112 64 Z",
+          "fromValue": "M 44 32 L 44 64 L 100 64 L 100 64 Z",
           "toValue": "M 32 32 L 32 64 L 96 64 L 96 32  Z",
           "startTime": 0,
           "endTime": 300,
@@ -137,7 +137,7 @@
         {
           "layerId": "bottom",
           "propertyName": "pathData",
-          "fromValue": "M 32 112 L 32 64 L 112 64 L 112 64 Z",
+          "fromValue": "M 44 96 L 44 64 L 100 64 L 100 64 Z",
           "toValue": "M 32 96 L 32 64 L 96 64 L 96 96 Z",
           "startTime": 0,
           "endTime": 300,
