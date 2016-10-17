@@ -10,7 +10,8 @@ import be.rijckaert.tim.vector.sample.library.R
 
 class FloatingMusicActionButton : FloatingActionButton {
 
-    private var isShowingPlayIcon: Boolean = true
+    var isShowingPlayIcon: Boolean = true
+        private set
     private var currentMode: Mode
 
     private val playToPauseDrawable: Drawable by lazy { ContextCompat.getDrawable(context, R.drawable.play_to_pause_animation) }
@@ -49,23 +50,19 @@ class FloatingMusicActionButton : FloatingActionButton {
     }
 
     private fun getAnimationDrawable(): Drawable =
-            if (isShowingPlayIcon && currentMode == Mode.PLAY_TO_PAUSE) {
-                playToPauseDrawable
-            } else if (!isShowingPlayIcon && currentMode == Mode.PLAY_TO_PAUSE) {
-                pauseToPlayDrawable
-            } else if (isShowingPlayIcon && currentMode == Mode.PLAY_TO_STOP) {
-                playToStopDrawable
-            } else {
-                stopToPlayDrawable
+            when {
+                isShowingPlayIcon && currentMode == Mode.PLAY_TO_PAUSE -> playToPauseDrawable
+                !isShowingPlayIcon && currentMode == Mode.PLAY_TO_PAUSE -> pauseToPlayDrawable
+                isShowingPlayIcon && currentMode == Mode.PLAY_TO_STOP -> playToStopDrawable
+                else -> stopToPlayDrawable
             }
 
     private fun playAnimation() {
         this.setImageDrawable(currentDrawable)
-        (currentDrawable as Animatable).start()
-        isShowingPlayIcon = !isShowingPlayIcon
+        currentDrawable.startAsAnimatable { isShowingPlayIcon = !isShowingPlayIcon }
     }
 
-    open fun setMode(mode: Mode, shouldInvalidateOnChange : Boolean = false) {
+    fun setMode(mode: Mode, shouldInvalidateOnChange: Boolean = false) {
         currentMode = mode
         if (shouldInvalidateOnChange)
             init()
@@ -74,5 +71,12 @@ class FloatingMusicActionButton : FloatingActionButton {
     enum class Mode(private val modeInt: Int) {
         PLAY_TO_PAUSE(0),
         PLAY_TO_STOP(1)
+    }
+
+    private fun Drawable.startAsAnimatable(finally: () -> Unit = { }) {
+        if (this is Animatable) {
+            this.start()
+            finally.invoke()
+        }
     }
 }
