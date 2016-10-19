@@ -1,0 +1,206 @@
+{
+  "artwork": {
+    "id": "playing_identifier",
+    "canvasColor": null,
+    "width": 128,
+    "height": 128,
+    "layers": [
+      {
+        "id": "1",
+        "type": "group",
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 0,
+        "pivotY": 0,
+        "translateX": 0,
+        "translateY": 0,
+        "layers": [
+          {
+            "id": "wave1",
+            "type": "path",
+            "pathData": "M 17.502 3.5 L 14.701 3.5 C 10.99 3.5 8 5.675 8 9.455 L 8 127.75 L 24 127.75 L 24 9.455 C 24 5.675 21.213 3.5 17.502 3.5 Z",
+            "fillColor": "#ff000000",
+            "fillAlpha": 1,
+            "strokeColor": "#ff000000",
+            "strokeAlpha": 1,
+            "strokeWidth": 0,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "miter",
+            "strokeMiterLimit": 10,
+            "trimPathStart": 0,
+            "trimPathEnd": 1,
+            "trimPathOffset": 0
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "type": "group",
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 0,
+        "pivotY": 0,
+        "translateX": 0,
+        "translateY": 0,
+        "layers": [
+          {
+            "id": "wave2",
+            "type": "path",
+            "pathData": "M 49.502 3.5 L 46.701 3.5 C 42.99 3.5 40 5.675 40 9.455 L 40 127.75 L 56 127.75 L 56 9.455 C 56 5.675 53.213 3.5 49.502 3.5 Z",
+            "fillColor": "#ff000000",
+            "fillAlpha": 1,
+            "strokeColor": "#ff000000",
+            "strokeAlpha": 1,
+            "strokeWidth": 0,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "miter",
+            "strokeMiterLimit": 10,
+            "trimPathStart": 0,
+            "trimPathEnd": 1,
+            "trimPathOffset": 0
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "type": "group",
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 0,
+        "pivotY": 0,
+        "translateX": 0,
+        "translateY": 0,
+        "layers": [
+          {
+            "id": "wave3",
+            "type": "path",
+            "pathData": "M 81.502 3.5 L 78.701 3.5 C 74.99 3.5 72 5.675 72 9.455 L 72 127.75 L 88 127.75 L 88 9.455 C 88 5.675 85.213 3.5 81.502 3.5 Z",
+            "fillColor": "#ff000000",
+            "fillAlpha": 1,
+            "strokeColor": "#ff000000",
+            "strokeAlpha": 1,
+            "strokeWidth": 0,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "miter",
+            "strokeMiterLimit": 10,
+            "trimPathStart": 0,
+            "trimPathEnd": 1,
+            "trimPathOffset": 0
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "type": "group",
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "pivotX": 0,
+        "pivotY": 0,
+        "translateX": 0,
+        "translateY": 0,
+        "layers": [
+          {
+            "id": "wave4",
+            "type": "path",
+            "pathData": "M 113.502 3.5 L 110.701 3.5 C 106.99 3.5 104 5.675 104 9.455 L 104 127.75 L 120 127.75 L 120 9.455 C 120 5.675 117.213 3.5 113.502 3.5 Z",
+            "fillColor": "#ff000000",
+            "fillAlpha": 1,
+            "strokeColor": "#ff000000",
+            "strokeAlpha": 1,
+            "strokeWidth": 0,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "miter",
+            "strokeMiterLimit": 10,
+            "trimPathStart": 0,
+            "trimPathEnd": 1,
+            "trimPathOffset": 0
+          }
+        ]
+      }
+    ]
+  },
+  "animations": [
+    {
+      "id": "play_animation",
+      "duration": 1000,
+      "blocks": [
+        {
+          "layerId": "1",
+          "propertyName": "translateY",
+          "fromValue": 20,
+          "toValue": 90,
+          "startTime": 0,
+          "endTime": 500,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "2",
+          "propertyName": "translateY",
+          "fromValue": 100,
+          "toValue": 50,
+          "startTime": 0,
+          "endTime": 400,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "3",
+          "propertyName": "translateY",
+          "fromValue": 50,
+          "toValue": 100,
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "4",
+          "propertyName": "translateY",
+          "fromValue": 30,
+          "toValue": 70,
+          "startTime": 0,
+          "endTime": 500,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "1",
+          "propertyName": "translateY",
+          "fromValue": 90,
+          "toValue": 20,
+          "startTime": 500,
+          "endTime": 1000,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "2",
+          "propertyName": "translateY",
+          "fromValue": 50,
+          "toValue": 100,
+          "startTime": 400,
+          "endTime": 1000,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "3",
+          "propertyName": "translateY",
+          "fromValue": 100,
+          "toValue": 50,
+          "startTime": 300,
+          "endTime": 1000,
+          "interpolator": "ACCELERATE_DECELERATE"
+        },
+        {
+          "layerId": "4",
+          "propertyName": "translateY",
+          "fromValue": 70,
+          "toValue": 30,
+          "startTime": 500,
+          "endTime": 1000,
+          "interpolator": "ACCELERATE_DECELERATE"
+        }
+      ]
+    }
+  ]
+}
