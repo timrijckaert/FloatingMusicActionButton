@@ -23,7 +23,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-        compile 'com.github.timrijckaert:FloatingMusicActionButton:v1.1'
+        compile 'com.github.timrijckaert:FloatingMusicActionButton:v1.2'
 }
 ```
 
