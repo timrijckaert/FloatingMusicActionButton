@@ -64,11 +64,11 @@ fab.setOnMusicFabClickListener(object : FloatingMusicActionButton.OnMusicFabClic
 ###Check state
 
 ```kotlin
-playToPauseFab.isShowingPlayIcon
+fab.isShowingPlayIcon
 ```
 
 ###Force Animation
 
 ```kotlin
-playToPauseFab.playAnimation()
+fab.playAnimation()
 ```
