@@ -8,8 +8,8 @@
         android:name="@string/play_icon_group_parts"
         android:pivotX="64"
         android:pivotY="64"
-        android:scaleX="1"
-        android:scaleY="1">
+        android:scaleX="1.5"
+        android:scaleY="1.5">
 
         <group android:name="@string/play_icon_group_top">
             <path

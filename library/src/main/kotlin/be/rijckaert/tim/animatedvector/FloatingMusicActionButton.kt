@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
+import android.view.View
 import be.rijckaert.tim.vector.sample.library.R
 
 class FloatingMusicActionButton : FloatingActionButton {
@@ -18,6 +19,8 @@ class FloatingMusicActionButton : FloatingActionButton {
     private val pauseToPlayDrawable: Drawable by lazy { ContextCompat.getDrawable(context, R.drawable.pause_to_play_animation) }
     private val playToStopDrawable: Drawable by lazy { ContextCompat.getDrawable(context, R.drawable.play_to_stop_animation) }
     private val stopToPlayDrawable: Drawable by lazy { ContextCompat.getDrawable(context, R.drawable.stop_to_play_animation) }
+
+    private var listener: OnMusicFabClickListener?  = null
 
     private val currentDrawable: Drawable
         get() {
@@ -40,7 +43,11 @@ class FloatingMusicActionButton : FloatingActionButton {
             typedArray.recycle()
         }
 
-        this.setOnClickListener { playAnimation() }
+        this.setOnClickListener {
+            playAnimation()
+            listener?.onClick(this)
+        }
+
         init()
     }
 
@@ -62,6 +69,10 @@ class FloatingMusicActionButton : FloatingActionButton {
         currentDrawable.startAsAnimatable { isShowingPlayIcon = !isShowingPlayIcon }
     }
 
+    fun setOnMusicFabClickListener(listener : OnMusicFabClickListener) {
+        this.listener = listener
+    }
+
     fun setMode(mode: Mode, shouldInvalidateOnChange: Boolean = false) {
         currentMode = mode
         if (shouldInvalidateOnChange)
@@ -78,5 +89,9 @@ class FloatingMusicActionButton : FloatingActionButton {
             this.start()
             finally.invoke()
         }
+    }
+
+    interface OnMusicFabClickListener {
+        fun onClick(view : View)
     }
 }
