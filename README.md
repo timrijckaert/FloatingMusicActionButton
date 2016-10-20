@@ -40,9 +40,35 @@ You can check out the sample provided in the repository.
         android:layout_height="wrap_content" />
 ```
 
-You can change the behavior of the fab dynamically using.
+###Change behaviour
+You can change the behaviour of the fab dynamically.
+Options are transitions between play and stop or play and pause.
 
 ```kotlin
 val musicFab = fab as FloatingMusicActionButton
 musicFab.setMode(FloatingMusicActionButton.Mode.PLAY_TO_STOP)
+```
+
+###Click Listener
+In order to receive click events register a 'OnMusicFabClickListener'
+
+```kotlin
+fab.setOnMusicFabClickListener(object : FloatingMusicActionButton.OnMusicFabClickListener {
+    override fun onClick(view: View) {
+        //do stuff
+    }
+
+})
+```
+
+###Check state
+
+```kotlin
+playToPauseFab.isShowingPlayIcon
+```
+
+###Force Animation
+
+```kotlin
+playToPauseFab.playAnimation()
 ```

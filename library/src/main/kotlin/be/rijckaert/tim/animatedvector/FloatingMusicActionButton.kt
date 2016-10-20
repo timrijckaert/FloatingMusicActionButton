@@ -64,7 +64,7 @@ class FloatingMusicActionButton : FloatingActionButton {
                 else -> stopToPlayDrawable
             }
 
-    private fun playAnimation() {
+    fun playAnimation() {
         this.setImageDrawable(currentDrawable)
         currentDrawable.startAsAnimatable { isShowingPlayIcon = !isShowingPlayIcon }
     }

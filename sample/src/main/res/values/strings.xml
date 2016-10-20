@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Floating Music Action Button</string>
+    <string name="animate_dynamically">Animate Me!</string>
 </resources>
