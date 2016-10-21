@@ -19,7 +19,7 @@ class FloatingMusicActionButton : FloatingActionButton {
 
     private var listener: OnMusicFabClickListener? = null
 
-    var currentMode: Mode
+    private var currentMode: Mode
     private val currentDrawable: Drawable
         get() {
             return getAnimationDrawable()
