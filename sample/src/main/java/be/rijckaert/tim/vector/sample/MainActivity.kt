@@ -14,16 +14,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         fab = findViewById(R.id.playToPauseFab) as FloatingMusicActionButton
-        fab?.setMode(FloatingMusicActionButton.Mode.PLAY_TO_PAUSE, true)
+        //fab?.changeMode(FloatingMusicActionButton.Mode.STOP_TO_PLAY)
 
         fab?.setOnMusicFabClickListener(object : FloatingMusicActionButton.OnMusicFabClickListener {
             override fun onClick(view: View) {
-                Toast.makeText(this@MainActivity, "Fab clicked!!! IsPlayIcon: ${fab?.isShowingPlayIcon}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "Fab clicked!!!", Toast.LENGTH_SHORT).show()
             }
         })
-    }
-
-    fun animateFab(view : View) {
-        fab?.playAnimation()
     }
 }

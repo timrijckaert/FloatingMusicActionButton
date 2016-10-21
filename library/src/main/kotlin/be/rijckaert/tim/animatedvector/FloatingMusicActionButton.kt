@@ -11,24 +11,21 @@ import be.rijckaert.tim.vector.sample.library.R
 
 class FloatingMusicActionButton : FloatingActionButton {
 
-    var isShowingPlayIcon: Boolean = true
-        private set
-    private var currentMode: Mode
-
     private val playToPauseDrawable: Drawable by lazy { ContextCompat.getDrawable(context, R.drawable.play_to_pause_animation) }
     private val pauseToPlayDrawable: Drawable by lazy { ContextCompat.getDrawable(context, R.drawable.pause_to_play_animation) }
     private val playToStopDrawable: Drawable by lazy { ContextCompat.getDrawable(context, R.drawable.play_to_stop_animation) }
     private val stopToPlayDrawable: Drawable by lazy { ContextCompat.getDrawable(context, R.drawable.stop_to_play_animation) }
+    private val maximumAnimationDuration by lazy { context.resources.getInteger(R.integer.play_button_animation_duration).toLong() }
 
     private var listener: OnMusicFabClickListener? = null
 
+    private var currentMode: Mode
     val currentDrawable: Drawable
         get() {
             return getAnimationDrawable()
         }
 
-    fun getMode(mode: Int): Mode = if (mode == 0) Mode.PLAY_TO_PAUSE else Mode.PLAY_TO_STOP
-
+    //<editor-fold desc="Chaining Constructors">
     constructor(context: Context, attrs: AttributeSet) : this(context, attrs, 0)
 
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle) {
@@ -48,50 +45,81 @@ class FloatingMusicActionButton : FloatingActionButton {
             listener?.onClick(this)
         }
 
-        init()
+        setMode(currentMode)
+        this.setImageDrawable(currentDrawable)
+    }
+    //</editor-fold>
+
+    @Synchronized
+    fun playAnimation() {
+        this.setImageDrawable(currentDrawable)
+        currentDrawable.startAsAnimatable {
+            val oppositeMode = getOppositeMode()
+            setMode(oppositeMode)
+        }
     }
 
-    fun init(isShowingPlayIcon: Boolean = true) {
-        this.isShowingPlayIcon = isShowingPlayIcon
+    private fun setMode(mode: Mode) {
+        this.currentMode = mode
+    }
+
+    fun changeMode(mode : Mode) {
+        setMode(mode)
         this.setImageDrawable(currentDrawable)
+    }
+
+    //<editor-fold desc="Helpers">
+    private fun getMode(mode: Int): Mode = when (mode) {
+        0 -> Mode.PLAY_TO_PAUSE
+        1 -> Mode.PLAY_TO_STOP
+        2 -> Mode.PAUSE_TO_PLAY
+        3 -> Mode.STOP_TO_PLAY
+        else -> Mode.STOP_TO_PLAY
+    }
+
+    private fun getOppositeMode(): Mode {
+        val position = if (currentMode.ordinal % 2 == 0) currentMode.ordinal + 1 else currentMode.ordinal - 1
+        return Mode.values()[position]
     }
 
     private fun getAnimationDrawable(): Drawable =
-            when {
-                isShowingPlayIcon && currentMode == Mode.PLAY_TO_PAUSE -> playToPauseDrawable
-                !isShowingPlayIcon && currentMode == Mode.PLAY_TO_PAUSE -> pauseToPlayDrawable
-                isShowingPlayIcon && currentMode == Mode.PLAY_TO_STOP -> playToStopDrawable
-                else -> stopToPlayDrawable
+            when (currentMode) {
+                Mode.PLAY_TO_PAUSE -> {
+                    playToPauseDrawable
+                }
+                Mode.PAUSE_TO_PLAY -> {
+                    pauseToPlayDrawable
+                }
+                Mode.PLAY_TO_STOP -> {
+                    playToStopDrawable
+                }
+                else -> {
+                    stopToPlayDrawable
+                }
             }
-
-    fun playAnimation() {
-        this.setImageDrawable(currentDrawable)
-        currentDrawable.startAsAnimatable { isShowingPlayIcon = !isShowingPlayIcon }
-    }
 
     fun setOnMusicFabClickListener(listener: OnMusicFabClickListener) {
         this.listener = listener
     }
 
-    fun setMode(mode: Mode, shouldGoToEndState: Boolean = false) {
-        currentMode = mode
-        if (shouldGoToEndState)
-            init(!shouldGoToEndState)
-    }
-
-    enum class Mode(private val modeInt: Int) {
-        PLAY_TO_PAUSE(0),
-        PLAY_TO_STOP(1)
+    enum class Mode(private val modeInt: Int, val isShowingPlayIcon: Boolean = false) {
+        PLAY_TO_PAUSE(0, true),
+        PAUSE_TO_PLAY(2),
+        PLAY_TO_STOP(1, true),
+        STOP_TO_PLAY(3)
     }
 
     private fun Drawable.startAsAnimatable(finally: () -> Unit = { }) {
         if (this is Animatable) {
             this.start()
-            finally.invoke()
+            this@FloatingMusicActionButton.postDelayed({
+                finally.invoke()
+            }, maximumAnimationDuration)
         }
     }
 
     interface OnMusicFabClickListener {
         fun onClick(view: View)
     }
+    //</editor-fold>
 }

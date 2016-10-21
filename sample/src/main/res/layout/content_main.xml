@@ -20,21 +20,31 @@
         android:layout_weight="1"
         android:layout_height="0dp" />
 
-    <Button
-        android:onClick="animateFab"
-        android:layout_gravity="center"
-        android:text="@string/animate_dynamically"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
     <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
-        android:id="@+id/playToStopFab"
         android:layout_width="match_parent"
         app:backgroundTint="@color/colorAccent"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:layout_weight="1"
         android:layout_gravity="center"
         app:mode="playToStop"
+        android:layout_height="0dp" />
+
+    <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+        android:layout_width="match_parent"
+        app:backgroundTint="@color/colorAccent"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        app:mode="pauseToPlay"
+        android:layout_height="0dp" />
+
+    <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+        android:layout_width="match_parent"
+        app:backgroundTint="@color/colorAccent"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        app:mode="stopToPlay"
         android:layout_height="0dp" />
 
     <be.rijckaert.tim.animatedvector.PlayingIndicationView
