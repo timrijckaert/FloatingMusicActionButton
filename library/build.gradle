@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.timrijckaert'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -8,7 +10,7 @@ android {
 
     defaultConfig {
         minSdkVersion rootProject.ext.defaultMinSdkVersion
-        targetSdkVersion rootProject.ext.defaultTargetSdkVersion
+        targetSdkVersion rootProject.ext.defaultTargetSdkVersiontop
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -23,6 +25,10 @@ android {
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 

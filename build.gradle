@@ -6,6 +6,7 @@ buildscript {
         defaultMinSdkVersion = 16
         defaultTargetSdkVersion = 24
         kotlin_version = '1.0.4'
+        maven_gradle_plugin_version = "1.5"
 
         android_support_version = "25.0.0"
 
@@ -25,6 +26,7 @@ buildscript {
         jcenter()
     }
     dependencies {
+        classpath "com.github.dcendents:android-maven-gradle-plugin:$maven_gradle_plugin_version"
         classpath 'com.android.tools.build:gradle:2.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
