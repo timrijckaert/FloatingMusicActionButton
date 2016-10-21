@@ -20,7 +20,7 @@ class FloatingMusicActionButton : FloatingActionButton {
     private val playToStopDrawable: Drawable by lazy { ContextCompat.getDrawable(context, R.drawable.play_to_stop_animation) }
     private val stopToPlayDrawable: Drawable by lazy { ContextCompat.getDrawable(context, R.drawable.stop_to_play_animation) }
 
-    private var listener: OnMusicFabClickListener?  = null
+    private var listener: OnMusicFabClickListener? = null
 
     private val currentDrawable: Drawable
         get() {
@@ -51,7 +51,7 @@ class FloatingMusicActionButton : FloatingActionButton {
         init()
     }
 
-    fun init() {
+    private fun init() {
         isShowingPlayIcon = true
         this.setImageDrawable(currentDrawable)
     }
@@ -69,14 +69,16 @@ class FloatingMusicActionButton : FloatingActionButton {
         currentDrawable.startAsAnimatable { isShowingPlayIcon = !isShowingPlayIcon }
     }
 
-    fun setOnMusicFabClickListener(listener : OnMusicFabClickListener) {
+    fun setOnMusicFabClickListener(listener: OnMusicFabClickListener) {
         this.listener = listener
     }
 
-    fun setMode(mode: Mode, shouldInvalidateOnChange: Boolean = false) {
+    fun setMode(mode: Mode, shouldGoToEndState: Boolean = false) {
         currentMode = mode
-        if (shouldInvalidateOnChange)
+        if (shouldGoToEndState) {
             init()
+            playAnimation()
+        }
     }
 
     enum class Mode(private val modeInt: Int) {
@@ -92,6 +94,6 @@ class FloatingMusicActionButton : FloatingActionButton {
     }
 
     interface OnMusicFabClickListener {
-        fun onClick(view : View)
+        fun onClick(view: View)
     }
 }
