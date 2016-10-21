@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         fab = findViewById(R.id.playToPauseFab) as FloatingMusicActionButton
+        fab?.setMode(FloatingMusicActionButton.Mode.PLAY_TO_PAUSE, true)
 
         fab?.setOnMusicFabClickListener(object : FloatingMusicActionButton.OnMusicFabClickListener {
             override fun onClick(view: View) {

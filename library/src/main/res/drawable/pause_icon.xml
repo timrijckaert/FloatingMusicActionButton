@@ -6,6 +6,7 @@
     android:viewportHeight="128">
     <group
         android:name="@string/play_icon_group_parts"
+        android:rotation="90"
         android:pivotX="64"
         android:pivotY="64"
         android:scaleX="1.5"
