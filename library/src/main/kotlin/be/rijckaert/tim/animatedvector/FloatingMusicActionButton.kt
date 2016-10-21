@@ -74,10 +74,12 @@ class FloatingMusicActionButton : FloatingActionButton {
     }
 
     fun setMode(mode: Mode, shouldGoToEndState: Boolean = false) {
-        currentMode = mode
-        if (shouldGoToEndState) {
-            init()
-            playAnimation()
+        if (mode != currentMode) {
+            currentMode = mode
+            if (shouldGoToEndState) {
+                init()
+                playAnimation()
+            }
         }
     }
 
