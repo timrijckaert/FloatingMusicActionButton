@@ -52,6 +52,7 @@ class FloatingMusicActionButton : FloatingActionButton {
     }
 
     private fun init(isShowingPlayIcon : Boolean = true) {
+        this.isShowingPlayIcon = isShowingPlayIcon
         this.setImageDrawable(currentDrawable)
     }
 
