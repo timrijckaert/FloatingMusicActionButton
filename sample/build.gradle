@@ -36,7 +36,10 @@ dependencies {
 
     testCompile(libraries.junit)
 
-    compile(libraries.android_appcompat, libraries.kotlin)
+    compile(
+            libraries.android_appcompat,
+            libraries.kotlin
+    )
 }
 repositories {
     mavenCentral()
