@@ -53,8 +53,7 @@ class FloatingMusicActionButton : FloatingActionButton {
     fun playAnimation() {
         this.setImageDrawable(currentDrawable)
         currentDrawable.startAsAnimatable {
-            val oppositeMode = getOppositeMode()
-            setMode(oppositeMode)
+           setOppositeMode()
         }
     }
 
@@ -62,9 +61,18 @@ class FloatingMusicActionButton : FloatingActionButton {
         this.currentMode = mode
     }
 
-    fun changeMode(mode : Mode) {
-        setMode(mode)
-        this.setImageDrawable(currentDrawable)
+    private fun setOppositeMode() {
+        setMode(getOppositeMode())
+    }
+
+    @Synchronized
+    fun changeMode(mode: Mode) {
+        if (mode != currentMode) {
+            setMode(mode)
+
+            setOppositeMode()
+            playAnimation()
+        }
     }
 
     //<editor-fold desc="Helpers">

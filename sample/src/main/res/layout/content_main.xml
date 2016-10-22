@@ -52,6 +52,8 @@
         android:textColor="@android:color/white"
         android:id="@+id/fab_current_mode"
         android:layout_width="match_parent"
+        android:gravity="center"
+        tools:text="Current Mode: Play"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
