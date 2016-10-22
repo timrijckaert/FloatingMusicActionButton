@@ -48,12 +48,13 @@ class FloatingMusicActionButton : FloatingActionButton {
         setMode(currentMode)
         this.setImageDrawable(currentDrawable)
     }
-    //</editor-fold>
 
+    //</editor-fold>
+    @Synchronized
     fun playAnimation() {
         this.setImageDrawable(currentDrawable)
         currentDrawable.startAsAnimatable {
-           setOppositeMode()
+            setOppositeMode()
         }
     }
 
