@@ -8,6 +8,7 @@ import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.View
 import be.rijckaert.tim.vector.sample.library.R
+import java.util.concurrent.atomic.AtomicBoolean
 
 class FloatingMusicActionButton : FloatingActionButton {
 
@@ -18,6 +19,7 @@ class FloatingMusicActionButton : FloatingActionButton {
     private val maximumAnimationDuration by lazy { context.resources.getInteger(R.integer.play_button_animation_duration).toLong() }
 
     private var listener: OnMusicFabClickListener? = null
+    private val isLocked = AtomicBoolean(false)
 
     var currentMode: Mode
     val currentDrawable: Drawable
@@ -50,11 +52,11 @@ class FloatingMusicActionButton : FloatingActionButton {
     }
 
     //</editor-fold>
-    @Synchronized
     fun playAnimation() {
         this.setImageDrawable(currentDrawable)
         currentDrawable.startAsAnimatable {
             setOppositeMode()
+            isLocked.set(false)
         }
     }
 
@@ -68,7 +70,8 @@ class FloatingMusicActionButton : FloatingActionButton {
 
     @Synchronized
     fun changeMode(mode: Mode) {
-        if (mode != currentMode) {
+        if (mode != currentMode && !isLocked.get()) {
+            isLocked.set(true)
             setMode(mode)
 
             setOppositeMode()
