@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,46 +10,82 @@
     android:orientation="vertical"
     tools:showIn="@layout/activity_main">
 
+    <!--    <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+            android:id="@+id/playToPauseFab"
+            android:layout_width="match_parent"
+            app:backgroundTint="@color/colorAccent"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:mode="playToPause"
+            android:layout_weight="1"
+            android:layout_height="0dp" />
+
+        <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+            android:layout_width="match_parent"
+            app:backgroundTint="@color/colorAccent"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            app:mode="playToStop"
+            android:layout_height="0dp" />
+
+        <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+            android:layout_width="match_parent"
+            app:backgroundTint="@color/colorAccent"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            app:mode="pauseToPlay"
+            android:layout_height="0dp" />-->
+
     <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
         android:id="@+id/playToPauseFab"
         android:layout_width="match_parent"
-        app:backgroundTint="@color/colorAccent"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_margin="@dimen/activity_horizontal_margin"
-        app:mode="playToPause"
         android:layout_weight="1"
-        android:layout_height="0dp" />
+        app:backgroundTint="@color/colorAccent"/>
 
-    <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+    <TextView
+        style="@style/Base.TextAppearance.AppCompat.Title"
+        android:textColor="@android:color/white"
+        android:id="@+id/fab_current_mode"
         android:layout_width="match_parent"
-        app:backgroundTint="@color/colorAccent"
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:layout_weight="1"
-        android:layout_gravity="center"
-        app:mode="playToStop"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-    <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+    <Button
         android:layout_width="match_parent"
-        app:backgroundTint="@color/colorAccent"
-        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_gravity="center"
-        app:mode="pauseToPlay"
-        android:layout_height="0dp" />
+        android:onClick="playToPause"
+        android:text="Play To Pause"/>
 
-    <be.rijckaert.tim.animatedvector.FloatingMusicActionButton
+    <Button
         android:layout_width="match_parent"
-        app:backgroundTint="@color/colorAccent"
-        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_gravity="center"
-        app:mode="stopToPlay"
-        android:layout_height="0dp" />
+        android:onClick="pauseToPlay"
+        android:text="Pause To Play"/>
 
-    <be.rijckaert.tim.animatedvector.PlayingIndicationView
+    <Button
         android:layout_width="match_parent"
-        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_height="0dp"/>
+        android:onClick="playToStop"
+        android:text="Play To Stop"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="stopToPlay"
+        android:text="Stop To Play"/>
+
+    <!--    <be.rijckaert.tim.animatedvector.PlayingIndicationView
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>-->
 </LinearLayout>
