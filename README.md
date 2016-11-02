@@ -23,7 +23,7 @@ Add the dependency
 
 ```gradle
 dependencies {
-        compile 'com.github.timrijckaert:FloatingMusicActionButton:v1.4'
+        compile 'com.github.timrijckaert:FloatingMusicActionButton:v2.0.4'
 }
 ```
 
@@ -46,7 +46,7 @@ Options are transitions between play and stop or play and pause.
 
 ```kotlin
 val musicFab = fab as FloatingMusicActionButton
-musicFab.setMode(FloatingMusicActionButton.Mode.PLAY_TO_STOP)
+musicFab.changeMode(FloatingMusicActionButton.Mode.PLAY_TO_STOP)
 ```
 
 ###Click Listener
@@ -61,14 +61,9 @@ fab.setOnMusicFabClickListener(object : FloatingMusicActionButton.OnMusicFabClic
 })
 ```
 
-###Check state
-
-```kotlin
-fab.isShowingPlayIcon
-```
-
 ###Force Animation
 
 ```kotlin
-fab.playAnimation()
+val musicFab = fab as FloatingMusicActionButton
+musicFab.playAnimation()
 ```
