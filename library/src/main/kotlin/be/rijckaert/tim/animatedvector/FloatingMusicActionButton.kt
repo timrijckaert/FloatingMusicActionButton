@@ -20,6 +20,7 @@ class FloatingMusicActionButton : FloatingActionButton {
     private var listener: OnMusicFabClickListener? = null
 
     var currentMode: Mode
+        private set
     val currentDrawable: Drawable
         get() {
             return getAnimationDrawable()
@@ -45,11 +46,10 @@ class FloatingMusicActionButton : FloatingActionButton {
             listener?.onClick(this)
         }
 
-        setMode(currentMode)
         this.setImageDrawable(currentDrawable)
     }
-
     //</editor-fold>
+
     fun playAnimation() {
         this.setImageDrawable(currentDrawable)
         currentDrawable.startAsAnimatable {
@@ -57,18 +57,14 @@ class FloatingMusicActionButton : FloatingActionButton {
         }
     }
 
-    private fun setMode(mode: Mode) {
-        this.currentMode = mode
-    }
-
     private fun setOppositeMode() {
-        setMode(getOppositeMode())
+        currentMode = getOppositeMode()
     }
 
     @Synchronized
     fun changeMode(mode: Mode) {
         if (mode != currentMode) {
-            setMode(mode)
+            currentMode = mode
 
             setOppositeMode()
             playAnimation()
